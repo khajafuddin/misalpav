@@ -1,1 +1,14 @@
+apt update -y
+sudo apt-get install openjdk-17-jdk
+java --version
+wget https://dlcdn.apache.org/maven/maven-3/3.9.6/binaries/apache-maven-3.9.6-bin.tar.gz
+tar -xvzf apache-maven-3.9.6-bin.tar.gz
+cp -pr apache-maven-3.9.6 /opt/
 
+open vi /root/.bashrc
+
+# please add below line at the end of file
+
+export PATH="/opt/apache-maven-3.9.6/bin:$PATH"
+
+save the file

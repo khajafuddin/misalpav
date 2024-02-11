@@ -1,0 +1,30 @@
+name: SingleStagePipeline
+trigger:
+  - master
+jobs:
+  - job: ActivityOnLinux
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+      - script: | 
+          echo "Welcome to Devops"
+          uname -a 
+          df -h
+
+  - job: ActivityOnWindow
+    pool:
+      vmImage: windows-latest
+    steps:
+      - task: PowerShell@2
+        inputs:
+          targetType: 'inline'
+          script: |
+            write-host "Welcome to Devops on Windows"
+  - job: OnCmdPrompt
+    pool:
+      vmImage: windows-latest
+    steps:
+      - script: | 
+          echo "Running script on window cmd line"
+  
+

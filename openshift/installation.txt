@@ -1,3 +1,9 @@
+https://console-openshift-console.apps.cluster1.priartw.com
+username: kubeadmin
+password: P9Cnc-ybKhP-rvESy-vvkt9
+
+
+
 Step1:
 
 Openshift installer

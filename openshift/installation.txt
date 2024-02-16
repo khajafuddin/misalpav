@@ -3,6 +3,7 @@ username: kubeadmin
 password: P9Cnc-ybKhP-rvESy-vvkt9
 
 
+DOTNET_STARTUP_PROJECT=HelloworldApp.web/HelloworldApp.web.csproj
 
 Step1:
 

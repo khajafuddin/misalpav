@@ -82,3 +82,65 @@ resource "aws_instance" "instance1" {
     Name = var.name1[count.index]
   }
 }
+=========================
+
+variable "rg_name" {
+  description = "resource Group Name"
+  type        = string
+  default     = "vadapav-rg2"
+}
+
+variable "region" {
+  description = "location"
+  type        = string
+  default     = "westus"
+}
+
+variable "subnet-cidr" {
+  type    = list(string)
+  default = ["2.1.1.0/25", "2.1.1.128/25"]
+}
+
+variable "r1" {
+  type    = list(number)
+  default = [36, 39, 35, 65]
+}
+variable "r2" {
+ type = list(any)
+ default = ["samosa", 29  ]  
+}
+
+variable "t1" {
+  type = tuple(number)
+  default = ([43,45,65,78])   
+}
+
+variable "l1" {
+    description = "logical"
+    type = bool
+    default = true
+}
+
+variable "m1" {
+    description = "learning maps"
+    type = map(string)
+    default = {
+      "dish" = "samosa"
+      "region" = "eastus"
+      "fruit" = "mango"
+    }
+}
+variable "m2" {
+    description = "learning maps"
+    type = map(any)
+    default = {
+      "dish" = " vadapav"
+      "age" = 25
+    }
+}
+variable "s1" {
+    description = " learning sets"
+    type = set(number)
+    default = [23, 32, 45]   
+}
+

@@ -12,3 +12,26 @@ variable "rg" {
   type    = set(string)
   default = ["hexa11", "hexa22", "hexa33"]
 }
+
+
+=======================================
+Map Example:
+
+variable "env1" {
+  type = map(string)
+  default = {
+    "env1" = "dev"
+    "env2" = "uat"
+    "env3" = "prod"
+  }
+}
+
+provider "azurerm" {
+  features {}
+}
+
+resource "azurerm_resource_group" "rg11" {
+  for_each = var.env1
+  name     = each.value
+  location = "eastus"
+}

@@ -144,3 +144,46 @@ variable "s1" {
     default = [23, 32, 45]   
 }
 
+
+variable "environment_list" {
+  type    = list(string)
+  default = ["dev", "uat", "prod"]
+}
+
+variable "environment_map" {
+  type = map(string)
+  default = {
+    "dev"  = "Dev",
+    "uat"  = "UAT",
+    "prod" = "PROD"
+  }
+}
+
+variable "env_instance_type" {
+  type = map(string)
+  default = {
+    "dev"  = "Standard_B1ms"
+    "uat"  = "Standard_B1s"
+    "prod" = "Standard_B2s"
+  }
+}
+
+variable "env_instance_settings" {
+  type = map(object({ instance_type = string, monitoring = bool }))
+  default = {
+    "dev" = {
+      instance_type = "Standard_B1ms"
+      monitoring    = false
+    }
+    "uat" = {
+      instance_type = "Standard_B1s"
+      monitoring    = false
+    }
+    "prod" = {
+      instance_type = "Standard_B2s"
+      monitoring    = true
+    }
+  }
+}
+
+

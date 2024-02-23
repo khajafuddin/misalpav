@@ -57,7 +57,7 @@ resource "azurerm_network_interface" "dosa-nic" {
     subnet_id                     = azurerm_subnet.dosa-s1.id
     private_ip_address_allocation = "Dynamic"
     public_ip_address_id          = element(azurerm_public_ip.dosa-publicip.*.id, count.index)
-    
+
   }
 
 }
@@ -65,19 +65,19 @@ resource "azurerm_network_interface" "dosa-nic" {
 resource "azurerm_subnet_network_security_group_association" "nsg1-association" {
   subnet_id                 = azurerm_subnet.dosa-s1.id
   network_security_group_id = azurerm_network_security_group.nsg1.id
-}  
+}
 
 resource "azurerm_subnet_network_security_group_association" "nsg2-association" {
   subnet_id                 = azurerm_subnet.dosa-s2.id
   network_security_group_id = azurerm_network_security_group.nsg1.id
-}  
+}
 
 
 resource "azurerm_network_security_group" "nsg1" {
-    name = "nsg1"
-    resource_group_name = azurerm_resource_group.dosa.name
-    location = azurerm_resource_group.dosa.location
-    security_rule {
+  name                = "nsg1"
+  resource_group_name = azurerm_resource_group.dosa.name
+  location            = azurerm_resource_group.dosa.location
+  security_rule {
     name                       = "test123"
     priority                   = 100
     direction                  = "Inbound"
@@ -92,7 +92,7 @@ resource "azurerm_network_security_group" "nsg1" {
   tags = {
     environment = "Production"
   }
-  
+
 }
 
 resource "azurerm_linux_virtual_machine" "dosa-vm1" {
@@ -102,9 +102,9 @@ resource "azurerm_linux_virtual_machine" "dosa-vm1" {
   disable_password_authentication = false
   admin_username                  = "docker"
   admin_password                  = "Docker@12345"
-  size                            = "Standard_B2s"
+  size                            = "Standard_B1ms"
   tags = {
-    "server" = "Production"
+    "server" = "Production1"
   }
   os_disk {
     caching              = "ReadWrite"
@@ -118,6 +118,29 @@ resource "azurerm_linux_virtual_machine" "dosa-vm1" {
   }
   count                 = var.machines
   network_interface_ids = [element(azurerm_network_interface.dosa-nic.*.id, count.index)]
-   
+
+  provisioner "file" {
+    source      = "web.sh"
+    destination = "/tmp/web.sh"
+  }
+  provisioner "file" {
+    source      = "index.html"
+    destination = "/tmp/index.html"
+  }
+  provisioner "remote-exec" {
+    inline = [
+      "sudo chmod a+x /tmp/web.sh",
+      "sudo /tmp/web.sh",
+      "sudo setfacl -m u:docker:rwx /var/www/html",
+      "sudo cp /tmp/index.html /var/www/html/index.html"
+    ]
+  }
+  connection {
+    type     = "ssh"
+    host     = self.public_ip_address
+    user     = "docker"
+    password = "Docker@12345"
+    timeout  = "3m"
+  }
 }
 

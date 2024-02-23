@@ -1,0 +1,123 @@
+terraform {
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "3.93.0"
+    }
+  }
+}
+
+provider "azurerm" {
+  features {}
+  subscription_id = "3cbaa148-e656-4d14-9e1a-1cc42ce43d87"
+  tenant_id       = "76b3bf13-6e67-4a78-8edc-b5b9e7e66fe8"
+  client_id       = "31405e8d-3b22-457d-8183-db2251e16620"
+  client_secret   = ".x48Q~_jNliaQ_5dkcA8r4grXi6XCg9Nboe2jbWD"
+}
+
+resource "azurerm_resource_group" "dosa" {
+  name     = var.groupname
+  location = var.region
+}
+
+resource "azurerm_virtual_network" "dosa-net" {
+  resource_group_name = azurerm_resource_group.dosa.name
+  location            = azurerm_resource_group.dosa.location
+  name                = var.name
+  address_space       = var.address
+}
+resource "azurerm_subnet" "dosa-s1" {
+  name                 = "subnet1-${var.name}"
+  address_prefixes     = [var.subnets[0]]
+  virtual_network_name = azurerm_virtual_network.dosa-net.name
+  resource_group_name  = azurerm_resource_group.dosa.name
+}
+resource "azurerm_subnet" "dosa-s2" {
+  name                 = "subnet2-${var.name}"
+  address_prefixes     = [var.subnets[1]]
+  virtual_network_name = azurerm_virtual_network.dosa-net.name
+  resource_group_name  = azurerm_resource_group.dosa.name
+}
+
+resource "azurerm_public_ip" "dosa-publicip" {
+  count               = var.machines
+  name                = "publicip-${var.names[count.index]}"
+  location            = azurerm_resource_group.dosa.location
+  resource_group_name = azurerm_resource_group.dosa.name
+  allocation_method   = "Dynamic"
+}
+
+resource "azurerm_network_interface" "dosa-nic" {
+  count               = var.machines
+  name                = "nic-${var.names[count.index]}"
+  location            = var.region
+  resource_group_name = azurerm_resource_group.dosa.name
+  ip_configuration {
+    name                          = "ip-${var.names[count.index]}"
+    subnet_id                     = azurerm_subnet.dosa-s1.id
+    private_ip_address_allocation = "Dynamic"
+    public_ip_address_id          = element(azurerm_public_ip.dosa-publicip.*.id, count.index)
+    
+  }
+
+}
+
+resource "azurerm_subnet_network_security_group_association" "nsg1-association" {
+  subnet_id                 = azurerm_subnet.dosa-s1.id
+  network_security_group_id = azurerm_network_security_group.nsg1.id
+}  
+
+resource "azurerm_subnet_network_security_group_association" "nsg2-association" {
+  subnet_id                 = azurerm_subnet.dosa-s2.id
+  network_security_group_id = azurerm_network_security_group.nsg1.id
+}  
+
+
+resource "azurerm_network_security_group" "nsg1" {
+    name = "nsg1"
+    resource_group_name = azurerm_resource_group.dosa.name
+    location = azurerm_resource_group.dosa.location
+    security_rule {
+    name                       = "test123"
+    priority                   = 100
+    direction                  = "Inbound"
+    access                     = "Allow"
+    protocol                   = "Tcp"
+    source_port_range          = "*"
+    destination_port_range     = "*"
+    source_address_prefix      = "*"
+    destination_address_prefix = "*"
+  }
+
+  tags = {
+    environment = "Production"
+  }
+  
+}
+
+resource "azurerm_linux_virtual_machine" "dosa-vm1" {
+  name                            = "vm-${var.names[count.index]}"
+  resource_group_name             = azurerm_resource_group.dosa.name
+  location                        = azurerm_resource_group.dosa.location
+  disable_password_authentication = false
+  admin_username                  = "docker"
+  admin_password                  = "Docker@12345"
+  size                            = "Standard_B2s"
+  tags = {
+    "server" = "Production"
+  }
+  os_disk {
+    caching              = "ReadWrite"
+    storage_account_type = "Standard_LRS"
+  }
+  source_image_reference {
+    publisher = "Canonical"
+    offer     = "0001-com-ubuntu-server-jammy"
+    sku       = "22_04-lts"
+    version   = "latest"
+  }
+  count                 = var.machines
+  network_interface_ids = [element(azurerm_network_interface.dosa-nic.*.id, count.index)]
+   
+}
+

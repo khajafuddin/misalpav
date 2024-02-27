@@ -1,0 +1,10 @@
+
+import "tfplan"
+
+main = rule {
+  all tfplan.resources.azurerm_linux_virtual_machine as *, instances {
+    all instances as \_, r {
+      (length(r.applied.tags) else 0) > 0
+    }
+  }
+}

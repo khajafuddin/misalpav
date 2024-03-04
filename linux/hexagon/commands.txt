@@ -236,3 +236,53 @@ mv /vadapav/D/D1 /vadapav/E/Done
   237  history
 ================================================
 54 16 28-31 * * [["$(date --date=tomorrow +\%d)"=="01"]] && script1.sh
+======================
+  245  # permissions
+  246  cd /vadapav/
+  247  ls
+  248  rm -fr *
+  249  touch 1.txt
+  250  ls -l 1.txt
+  251  mkdir A1
+  252  ls -l
+  253  ls -l /dev/
+  254  clear
+  255  ls -l /dev
+  256  clear
+  257  ls -l /dev | grep ^-
+  258  ls -l /dev | grep ^b
+  259  ls -l /dev | grep ^b | wc -l
+  260  ls -l /dev | grep ^c | wc -l
+  261  ls -l /dev | grep ^p | wc -l
+  262  ls -l /dev | grep ^d | wc -l
+  263  ls -l 1.txt
+  264  clear
+  265  chmod 000 1.txt
+  266  ls -l 1.txt
+  267  chmod 001 1.txt
+  268  ls -l 1.txt
+  269  chmod 444 1.txt
+  270  ls -l 1.txt
+  271  chmod 660 1.txt
+  272  chmod 777 1.txt
+  273  ls -l 1.txt
+  274  chmod 888 1.txt
+  275  ls -ld /tmp
+  276  mkdir A1
+  277  ls -ld A1
+  278  chmod 1777 A1
+  279  ls -ld A1
+  280  # if t is applied on others , is called as sticky bit , which allow all users in system to create, modify and execute files created by anyone , however only owner/root is allowed to delete the files
+  281  clear
+  282  ls -l 1.txt
+  283  echo 123 > 1.txt
+  284  cat 1.txt
+  285  chattr +a 1.txt
+  286  ls -l 1.txt
+  287  rm -fr 1.txt
+  288  echo 1234 >> 1.txt
+  289  echo 1234 > 1.txt
+  290  chattr +i 1.txt
+  291  echo 1234 >> 1.txt
+  292  chattr --help
+  293  history

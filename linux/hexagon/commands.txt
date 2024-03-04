@@ -234,3 +234,5 @@ mv /vadapav/D/D1 /vadapav/E/Done
   235  tar -xvf biryani.tar
   236  ls -lh
   237  history
+================================================
+54 16 28-31 * * [["$(date --date=tomorrow +\%d)"=="01"]] && script1.sh

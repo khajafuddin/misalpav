@@ -125,3 +125,85 @@
   128  df -h
   129  ls
   130  history
+=====================================
+ 150  mkdir -p /india/telangana/hitech/hexagoan/divyashree/ground
+  151  tree /india
+  152  apt install tree
+  153  clear
+  154  # mkdir -p /india/telangana/hitech/hexagoan/divyashree/ground
+  155  tree /india
+  156  mkdir /home/tango
+  157  mkdir /home/tango/mango
+  158  mkdir /home/tango/mango/zango/pango
+  159  mkdir -p /home/tango/mango/zango/pango
+  160  mkdir /home/tango/{A..E}
+  161  tree /home/tango/
+  162  mkdir /home/tango/{Apple,Egg}
+  163  tree /home/tango/
+  164  history
+  165  clear
+  166  mkdir /vadapav
+  167  cd /vadapav/
+  168  ls
+  169  mkdir -p {A..E}
+  170  ls
+  171  mkdir -p A/A{1..2}
+  172  mkdir -p B/B{1..2}
+  173  mkdir -p C/C{1..2}
+  174  mkdir -p D/D{1..2}
+  175  mkdir -p E/E{1..2}
+  176  tree /vadapav
+  177  touch A/A{1..2}/a{1..3}.txt
+  178  touch B/B{1..2}/b{1..3}.txt
+  179  touch C/C{1..2}/c{1..3}.txt
+  180  touch D/D{1..2}/d{1..3}.txt
+  181  touch E/E{1..2}/e{1..3}.txt
+  182  tree /vadapav
+  183  history
+  184  #apt update
+  185  # apt install tree
+  186  clear
+  187  ls
+  188  cd A
+  189  cd ..
+  190  mkdir -p 1/2/3/4/5/6/7/8/9
+  191  tree 1
+  192  pwd
+  193  cd 1/2/3/4/
+  194  pwd
+  195  cd 5/6/7/8/9
+  196  pwd
+  197  cd ..
+  198  cd ../..
+  199  cd ../../..
+  200  cd -
+  201  mkdir A1
+  202  rm A1
+  203  rm -r A1
+  204  rm -r 1
+================================================
+
+
+copy a1.txt file from A1 folder to E2 folder
+cp /vadapav/A/A1/a1.txt  /vadapav/E/E2/aone.txt
+
+copy c3.txt from C2 folder to B1 folder
+cp /vadapav/C/C2/c3.txt /vadapav/B/B1
+
+copy D2 folder to B1 folder
+cp -r /vadapav/D/D2 /vadapav/B/B1
+
+Copy E2 folder to /home folder
+
+Rename e3.txt from E1 folder to ethree.txt
+mv /vadapav/E/E1/e3.txt /vadapav/E/E1/ethree.txt
+
+Rename C2 folder as ctwo 
+mv /vadapav/C/C2 /vadapav/C/Ctwo
+
+Delete folder Ctwo from C 
+rm -r /vadapav/C/Ctwo
+
+move file b3.txt from B2 folder to D1 folder
+mv /vadapav/B/B2/b3.txt /vadapav/D/D1/bthree.txt
+mv /vadapav/D/D1 /vadapav/E/Done

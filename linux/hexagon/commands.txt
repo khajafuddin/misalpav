@@ -207,3 +207,30 @@ rm -r /vadapav/C/Ctwo
 move file b3.txt from B2 folder to D1 folder
 mv /vadapav/B/B2/b3.txt /vadapav/D/D1/bthree.txt
 mv /vadapav/D/D1 /vadapav/E/Done
+===============
+  212  dd if=/dev/zero of=1.txt bs=1M count=1000
+  213  dd if=/dev/zero of=2.txt bs=1M count=1000
+  214  dd if=/dev/zero of=3.txt bs=1M count=1000
+  215  ls -lh
+  216  tar -cvf biryani.tar 1.txt 2.txt 3.txt
+  217  ls -lh biryani.tar
+  218  rm -fr ?.txt
+  219  ls -lh
+  220  gzip biryani.tar
+  221  ls -lh biryani.tar.gz
+  222  bzip2 biryani.tar.gz
+  223  apt install bzip2
+  224  bzip2 biryani.tar.gz
+  225  ls -lh biryani.tar.gz.bz2
+  226  clear
+  227  history
+  228  cp biryani.tar.gz.bz2 /home/
+  229  cd /home/
+  230  ls
+  231  bunzip2 biryani.tar.gz.bz2
+  232  ls -lh
+  233  gunzip biryani.tar.gz
+  234  ls -lh biryani.tar
+  235  tar -xvf biryani.tar
+  236  ls -lh
+  237  history

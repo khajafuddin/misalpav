@@ -1,0 +1,127 @@
+ 3  date
+    4  date "+%d"
+    5  date "+%d-%m"
+    6  date "+%d-%b"
+    7  date "+%d-%b-%y"
+    8  date "+%d-%b-%Y"
+    9  date "+%d-%b-%Y:%H"
+   10  date "+%d-%b-%Y:%H:%M"
+   11  date "+%d-%b-%Y:%H:%M:%s"
+   12  man date
+   13  clear
+   14  # file I/O Operations
+   15  # touch
+   16  mkdir /samosa
+   17  cd /samosa
+   18  pwd
+   19  touch 1.txt
+   20  ls
+   21  touch {1..10}.txt
+   22  ls
+   23  touch {a..z}.txt
+   24  ls
+   25  touch {1..10}{a..z}{A..Z}.txt
+   26  ls
+   27  history
+   28  file 1.txt
+   29  clear
+   30  cat >> vadapav.txt
+   31  cat vadapav.txt
+   32  cat >> vadapav.txt
+   33  cat vadapav.txt
+   34  cat > vadapav.txt
+   35  cat vadapav.txt
+   36  cat >> vadapav.txt
+   37  cat vadapav.txt
+   38  clear
+   39  dd if=/dev/zero of=1.txt count=1
+   40  ls -lh 1.txt
+   41  dd if=/dev/zero of=1.txt bs=1M count=1
+   42  ls -lh 1.txt
+   43  dd if=/dev/zero of=1.txt bs=1M count=1000
+   44  ls -lh 1.txt
+   45  clear
+   46  touch a.txt
+   47  stat a.txt
+   48  vi a.txt
+   49  stat a.txt
+   50  vi a.txt
+   51  stat a.txt
+   52  dd if=/dev/zero of=a.txt bs=512 count=8
+   53  stat a.txt
+   54  dd if=/dev/zero of=a.txt bs=4097 count=1
+   55  stat a.txt
+   56  dd if=/dev/zero of=a.txt bs=512 count=2048
+   57  ls -lh a.txt
+   58  stat a.txt
+   59  clear
+   60  history
+   61  clear
+   62  # MBR
+   63  fdisk -l
+   64  clear
+   65  dd if=/dev/sda of=mbr.bkp bs=512 count=1
+   66  ls -l mbr.bkp
+   67  file mbr.bkp
+   68  cat mbr.bkp
+   69  PuTTYPuTTYPuTTY
+   70  vi mbr.bkp
+   71  hexdump -C mbr.bkp
+   72  clear
+   73  which ls
+ 
+   76  objdump -D /usr/bin/ls
+   77  history
+   78  clear
+   79  # touch
+   80  # cat
+   81  # dd
+   82  vi hexa.txt
+   83  vi hexa1.txt
+   84  cat hexa1.txt
+   85  > becareful.txt
+   86  >> append.txt
+   87  ls -lh 1.txt
+   88  > 1.txt
+   89  ls -lh 1.txt
+   90  clear
+   91  # how to delete the file
+   92  rm 1.txt
+   93  rm 2.txt
+   94  touch {1..100000}.txt
+   95  ls
+   96  clear
+   97  rm ?.txt
+   98  rm ??.txt
+   99  rm ???.txt
+  100  rm ????.txt
+  101  rm ?????.txt
+  102  ls
+  103  rm ??????.txt
+  104  ls
+  105  rm ???????.txt
+  106  ls
+  107  rm ????????.txt
+  108  ls
+  109  rm ????????.txt
+  110  rm ?????????.txt
+  111  ls
+  112  # copy files
+  113  ls
+  114  cp mbr.bkp
+  115  cp mbr.bkp mbr1.bkp
+  116  ls
+  117  cp mbr.bkp /tmp
+  118  cp mbr.bkp /tmp/samosa.bkp
+  119  ls
+  120  mv mbr.bkp samosa.bkp
+  121  ls
+  122  cp mbr.bkp /vadapav/samosa.bkp
+  123  ls
+  124  cp mbr1.bkp /vadapav/samosa.bkp
+  125  cd /
+  126  pwd
+  127  clear
+  128  df -h
+  129  ls
+  130  history

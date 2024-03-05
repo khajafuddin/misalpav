@@ -286,3 +286,65 @@ mv /vadapav/D/D1 /vadapav/E/Done
   291  echo 1234 >> 1.txt
   292  chattr --help
   293  history
+=======
+ 557  ip a s
+  558  nmcli c show
+  559  nmcli c down enp0s8
+  560  nmcli c up enp0s8
+  561  cd /etc/sysconfig/network-scripts/
+  562  ls
+  563  clear
+  564  lscpu
+  565  free -h
+  566  fdisk -l
+  567  lsblk
+  568  history
+  569  clear
+  570  iostat -d
+  571  yum install sysstat
+  572  clear
+  573  iostat -d
+  574  sar
+  575  cd /var/log/
+  576  ls
+  577  pwd
+  578  clear
+  579  vi /etc/passwd
+  580  clear
+  581  vi /etc/passwd
+  582  lear
+  583  clear
+  584  top
+  585  ps -eaf | grep defunct
+  586  clear
+  587  history
+===
+ 529  crontab -e
+  530  date
+  531  crontab -u root -e
+  532  clear
+  533  crontab -u root -l
+  534  tail -10f /var/log/cron
+  535  nmcli c up enp0s3
+  536  ping google.com
+  537  ip a s
+  538  clear
+  539  netstat -rn
+  540  ip route
+  541  nmcli c down enp0s8
+  542  ping google.com
+  543  clear
+  544  cd /proc/
+  545  ls
+  546  ps -eaf | grep passwd
+  547  cd  1573
+  548  ls
+  549  cd fd
+  550  ls
+  551  ls -l
+  552  # 0 -- standard Input
+  553  # 1 -- Standard Output
+  554  # 2 -- Standard Error
+  555  kill -9 1573
+  556  kill -l
+  557  history

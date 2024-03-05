@@ -348,3 +348,43 @@ mv /vadapav/D/D1 /vadapav/E/Done
   555  kill -9 1573
   556  kill -l
   557  history
+==========
+  806  mkdir /hexa
+  807  mount /dev/sda5 /hexa
+  808  mkfs.ext4 /dev/sda5
+  809  mount /dev/sda5 /hexa
+  810  df -h
+  811  clear
+  812  cd /hexa/
+  813  ls
+  814  touch {1..10}.txt
+  815  ls
+  816  cd ..
+  817  umount /hexa
+  818  cd /hexa/
+  819  ls
+  820  cd ..
+  821  mount /dev/sda5 /hexa
+  822  cd /hexa/
+  823  ls
+  824  ls -il 1.txt
+  825  find /hexa -inum 12
+  826  rm 1.txt
+  827  ls -il 3.txt
+  828  find /hexa -inum 14
+  829  find /hexa -inum 14 -exec rm -f {} \;
+  830  find /hexa -inum 14
+  831  ls -l 3.txt
+  832  clear
+  833  touch {1..65536}.txt
+  834  ls -il 65525.txt
+  835  touch a.txt
+  836  df -i
+  837  rm -fr 1.txt
+  838  df -i
+  839  touch a.txt
+  840  touch b.txt
+  841  rm -fr *
+  842  ls
+  843  df -i
+  844  history

@@ -1,0 +1,36 @@
+[root@client1 ~]# cat emp
+ajay manager account 45000
+sunil clerk account 25000
+varun manager sales 50000
+amit manager account 47000
+tarun peon sales 15000
+deepak clerk sales 23000
+sunil peon sales 13000
+satvik director purchase 80000
+
+
+
+904  # awk
+  905  man awk
+  906  cat /etc/passwd | awk -F ":" {'print $1'}
+  907  clear
+  908  awk -F ":" {'print $1'}
+  909  awk -F ":" {'print $1'} /etc/passwd
+  910  clear
+  911  awk -F ":" {'print $1'} /etc/passwd | sort
+  912  clear
+  913  awk -F ":" {'print $1'} /etc/passwd | sort -nr
+  914  clear
+  915  history
+  916  awk "NR==1{print;exit}" /etc/resolv.conf
+  917  awk "NR==2{print;exit}" /etc/resolv.conf
+  918  clear
+  919  vi emp
+  920  awk '{print}' emp
+  921  awk '/manager/ {print}' emp
+  922  awk '{print $1,$4}' emp
+  923  awk '{print NR,$0}' emp
+  924  awk '{print NR,$1}' emp
+  925  awk '{print NR,$5}' emp
+  926  awk '{print NR,$4}' emp
+  927  awk '{print $1,$NF}' emp

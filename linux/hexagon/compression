@@ -1,0 +1,5 @@
+$vadapav = @{path = ".\one.txt",".\two.txt",".\three.txt" 
+             CompressionLevel = "fastest" 
+             Destinationpath = "D:\hexa\vadapav.zip"}
+
+compress-archive @vadapav

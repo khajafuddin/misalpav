@@ -1,0 +1,4 @@
+New-Alias -Name samosa2 -Value Get-ChildItem 
+Export-Alias -Path 'c:\users\Priar Technoworld\OneDrive\Desktop\hexa\alias.txt' 
+Import-Alias -path 'C:\users\Priar Technoworld\OneDrive\Desktop\hexa\alias.txt'                     
+get-alias                                                                                           

@@ -34,3 +34,14 @@ satvik director purchase 80000
   925  awk '{print NR,$5}' emp
   926  awk '{print NR,$4}' emp
   927  awk '{print $1,$NF}' emp
+-------------------------------------------------------
+ 959  df -h | awk -F " " {'print $6 "\t\t" $5'}
+  961  df -h | awk -F " " {'print $6 "\t\t" $5'} | tr -d %
+  962  df -h | awk -F " " {'print $6 "\t\t" $5'} | tr -d % | sed 1d
+  963  df -h | awk -F " " {'print $6 "\t\t" $5'} | tr -d % | sed 1d | awk ($2 > 10)
+  964  df -h | awk -F " " {'print $6 "\t\t" $5'} | tr -d % | sed 1d | awk ('$2 > 10')
+  965  df -h | awk -F " " {'print $6 "\t\t" $5'} | tr -d % | sed 1d | awk '($2 > 10)'
+  966  df -h | awk -F " " {'print $6 "\t\t" $5'} | tr -d % | sed 1d | awk '($2 > 50)'
+  967  df -h | awk -F " " {'print $6 "\t\t" $5'} | tr -d % | sed 1d | awk '($2 > 20)'
+  968  df -h | awk -F " " {'print $6 "\t\t" $5'} | tr -d % | sed 1d | awk '($2 > 20)' | sort
+  969  df -h | awk -F " " {'print $6 "\t\t" $5'} | tr -d % | sed 1d | awk '($2 > 20)' | sort -nr

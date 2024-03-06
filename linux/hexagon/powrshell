@@ -8,3 +8,13 @@ get-alias
   56 Remove-Item one                                                                                                                                                                                    
   58 Remove-Item .\one.txt                                                                               
   59 ls                               
+ 70 help set-content                                                                                    
+  71 help set-content -Examples                                                                          
+  72 Set-Content -path .\one.txt -Value "hello, world"                                                   
+  73 Get-Content .\one.txt                                                                               
+  74 Set-Content -path .\one.txt -Value "hello, world1"                                                  
+  75 Get-Content .\one.txt                                                                               
+  76 Set-Content -Path .\one.txt                                                                         
+  77 Get-Content .\one.txt                                                                               
+  78 Set-Content -path .\one.txt -Value "hello, world1, world2 ,`nworld3"                                
+  79 Get-Content .\one.txt                                              

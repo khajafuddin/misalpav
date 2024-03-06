@@ -18,3 +18,16 @@ get-alias
   77 Get-Content .\one.txt                                                                               
   78 Set-Content -path .\one.txt -Value "hello, world1, world2 ,`nworld3"                                
   79 Get-Content .\one.txt                                              
+==============
+Rename-Computer -NewName "samosa"
+ 112 Rename-Computer -NewName "samosa"                                                                                                                                         
+                                                   
+ 118 Get-ItemProperty -Path D:\hexa                                                                      
+ 119 Get-ItemProperty -Path D:\hexa\one.txt                                                              
+ 120 get-help Set-ItemProperty -Examples                                                                 
+ 121 Get-ItemProperty -Path D:\hexa\one.txt | Get-Member 
+ 123 get-help Set-ItemProperty -Examples                                                                 
+ 124 Set-ItemProperty -Path D:\hexa\one.txt -Name IsReadOnly -Value $true                                
+ 125 Get-ItemProperty -path D:\hexa\one.txt | Format-List                                                
+ 126 Set-ItemProperty -Path D:\hexa\one.txt -Name IsReadOnly -Value $false                               
+ 127 Get-ItemProperty -path D:\hexa\one.txt | Format-List

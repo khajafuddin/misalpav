@@ -2,3 +2,9 @@ New-Alias -Name samosa2 -Value Get-ChildItem
 Export-Alias -Path 'c:\users\Priar Technoworld\OneDrive\Desktop\hexa\alias.txt' 
 Import-Alias -path 'C:\users\Priar Technoworld\OneDrive\Desktop\hexa\alias.txt'                     
 get-alias                                                                                           
+==========
+  52 New-item -ItemType file one.txt                                                                     
+  53 New-item -ItemType directory one                                                                                                                                                             
+  56 Remove-Item one                                                                                                                                                                                    
+  58 Remove-Item .\one.txt                                                                               
+  59 ls                               

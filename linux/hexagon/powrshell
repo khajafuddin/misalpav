@@ -31,3 +31,9 @@ Rename-Computer -NewName "samosa"
  125 Get-ItemProperty -path D:\hexa\one.txt | Format-List                                                
  126 Set-ItemProperty -Path D:\hexa\one.txt -Name IsReadOnly -Value $false                               
  127 Get-ItemProperty -path D:\hexa\one.txt | Format-List
+=================
+ 29 get-help New-Website -Examples                                                                      
+  30 New-WebSite -Name biryani -Port 81 -HostHeader biryanisite -PhysicalPath "D:\html_pages\biryani"    
+  31 New-WebSite -Name biryani1 -Port 82  -PhysicalPath "D:\html_pages\biryani"                          
+  32 Remove-Website -Name biryani1                                                                       
+  33 Remove-Website -Name biryani                                                                        

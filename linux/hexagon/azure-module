@@ -1,0 +1,9 @@
+InstalllAzure Module
+                                                                      
+Get-Module -Name AzureRM -ListAvailable                                                             
+Install-Module -Name PowerShellGet -Force                                                           
+Get-ExecutionPolicy -List                                                                           
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope CurrentUser                                
+Get-ExecutionPolicy -List                                                                           
+Install-Module -Name Az -Repository PSGallery -Force  
+Update-Module -Name Az -Force

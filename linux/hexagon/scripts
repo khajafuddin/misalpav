@@ -1,0 +1,9 @@
+$rg1='hexa11','hexa12','hexa13','hexa14'
+
+for ($i=0;$i -lt $rg1.Length;$i++)
+{ 
+    remove-azresourcegroup -Name $rg1[$i] -location "eastus" -force 
+    Write-Host "$rg1[$i] added successfully" 
+               
+}
+

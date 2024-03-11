@@ -1,0 +1,26 @@
+FROM ubuntu
+MAINTAINER "trainer@gmail.com"
+LABEL "app"="prod"
+
+WORKDIR /samosa
+WORKDIR vadapav
+WORKDIR dosa
+
+COPY 1.txt /samosa
+ADD 2.txt /samosa/vadapav
+
+ADD 1.tar /samosa/vadapav/dosa
+COPY 1.tar /samosa
+
+ADD https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.80-installer.msi /samosa
+
+RUN apt update -y && apt install apache2 -y
+COPY index.html /var/www/html
+EXPOSE 80
+VOLUME webserver
+ENV dish=samosa
+ENV a=10
+ENV memory=2M
+ARG hostname=vadapav
+
+ENTRYPOINT ["apache2ctl","-D","FOREGROUND"]

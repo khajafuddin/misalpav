@@ -5,7 +5,7 @@ https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/stable/openshif
 
 https://console-openshift-console.apps.cluster1.priartw.com
 username: kubeadmin
-password: P9Cnc-ybKhP-rvESy-vvkt9
+password: oBfKw-p2pG8-mznec-NaMrG
 
 
 DOTNET_STARTUP_PROJECT=HelloworldApp.web/HelloworldApp.web.csproj

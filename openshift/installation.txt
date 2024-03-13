@@ -1,3 +1,5 @@
+https://www.redhat.com/en/interactive-labs/log-in-red-hat-openshift-cluster
+
 https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/stable/openshift-client-windows.zip
 
 

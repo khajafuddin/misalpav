@@ -1,3 +1,6 @@
+https://mirror.openshift.com/pub/openshift-v4/x86_64/clients/ocp/stable/openshift-client-windows.zip
+
+
 https://console-openshift-console.apps.cluster1.priartw.com
 username: kubeadmin
 password: P9Cnc-ybKhP-rvESy-vvkt9

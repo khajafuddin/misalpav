@@ -12,3 +12,19 @@
    23  man date
    24  history
    =========================
+ 28  mkdir /vadapav
+   29  cd /vadapav/
+   30  touch 1.txt
+   31  # touch 1.txt -- it creates 0 byte file
+   32  ls
+   33  ls -l
+   34  ll
+   35  touch {1..10}.txt
+   36  l
+   37  ls
+   38  touch {1..100}.txt
+   39  ls
+   40  touch {1..100000}.txt
+   41  ls
+   42  history
+=============================

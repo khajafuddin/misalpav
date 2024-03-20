@@ -1,0 +1,14 @@
+ 10  date "+%d"
+   12  date "+%d-%m"
+   13  date "+%d-%b"
+   15  date "+%d-%b-%y"
+   16  date "+%d-%b-%Y"
+   17  date "+%d-%b-%Y:%H"
+   18  date "+%d-%b-%Y:%H:%M"
+   19  date "+%d-%b-%Y:%H:%M:%s"
+   20  date --help
+   21  man date
+   22  date --help
+   23  man date
+   24  history
+   =========================

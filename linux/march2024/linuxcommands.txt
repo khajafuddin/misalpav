@@ -43,3 +43,27 @@
    56  dd if=/dev/zero of=c.txt bs=1M count=1000
    57  ls -lh c.txt
 ========================================
+ 60  # touch
+   61  # cat
+   62  # dd
+   63  # editors -- vi, vim, nano, emacs , sublime , gedit
+   64  vi d.txt
+   65  cat d.txt
+   66  vi d.txt
+   67  cat d.txt
+   68   > e.txt
+   69  >> f.txt
+   70  ls -lh c.txt
+   71  > c.txt
+   72  ls -lh c.txt
+   73  dd if=/dev/zero of=c.txt bs=1M count=1000
+   74  >> c.ttx
+   75  >> c.txt
+   76  ls -lh c.txt
+   77  # touch
+   78  # cat
+   79  # dd
+   80  # vi
+   81  # >
+   82  # >>
+====================================================

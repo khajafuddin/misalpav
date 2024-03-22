@@ -192,3 +192,10 @@ Archival and compression
   230  yum install bzip2
   231  ls -lh
   232  bzip2 1.tar.gz
+=============================
+ 236  bunzip2 1.tar.gz.bz2
+  237  ls -lh
+  238  gunzip 1.tar.gz
+  239  ls -lh
+  240  tar -xvf 1.tar
+==============================

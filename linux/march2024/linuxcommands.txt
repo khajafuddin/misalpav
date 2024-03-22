@@ -108,3 +108,30 @@
   145  tree /samosa
   147  history
 ==============================
+ 149  pwd
+  150  # pwd - present working directory
+  151  cd ..
+  152  pwd
+  153  cd ../..
+  154  pwd
+  155  cd ../../..
+  156  pwd
+  157  cd ../../..
+  158  pwd
+  159  cd 1/2/3/4/5/6/7/8/9/
+  160  pwd
+  161  cd ../../../../../..
+  162  pwd
+  163  cd -
+  164  # cd - : is used to access last accessed directory
+  165  cd -
+  166  cd ..
+  167  cd ../../..
+  168  cd ..
+  169  pwd
+  170  cd 1/2/3/4/5/6/7/8/9/
+  171  history
+  172  cd -
+  173  cd ~
+  174  # cd ~ : home directory of user
+  175  history

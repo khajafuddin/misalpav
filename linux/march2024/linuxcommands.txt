@@ -199,3 +199,18 @@ Archival and compression
   239  ls -lh
   240  tar -xvf 1.tar
 ==============================
+ 250  # permissions
+  251  # user management
+  252  # ownsership
+  253  touch 1.txt
+  254  ls -l 1.txt
+  255  mkdir A1
+  256  ls -l
+  257  chmod 000 1.txt
+  258  ls -l 1.txt
+  259  chmod 001 1.txt
+  260  ls -l 1.txt
+  261  chmod 020 1.txt
+  262  ls -l 1.txt
+  263  chmod 100 1.txt
+  264  history

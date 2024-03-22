@@ -172,3 +172,23 @@
   212  ls
   213  history
 =========================
+Archival and compression
+
+ 215  # file archival, compression and decompression
+  216  ls
+  217  rm -fr one.txt
+  218  dd if=/dev/zero of=1.txt bs=1M count=1000
+  219  dd if=/dev/zero of=2.txt bs=1M count=1000
+  220  dd if=/dev/zero of=3.txt bs=1M count=1000
+  221  ls -lh
+  222  tar -cvf 1.tar 1.txt 2.txt 3.txt
+  223  ls -lh
+  224  rm -f ?.txt
+  225  ls -lh
+  226  man tar
+  227  gzip 1.tar
+  228  ls -lh
+  229  bzip2 1.tar.gz
+  230  yum install bzip2
+  231  ls -lh
+  232  bzip2 1.tar.gz

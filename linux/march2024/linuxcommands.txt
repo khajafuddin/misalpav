@@ -135,3 +135,40 @@
   173  cd ~
   174  # cd ~ : home directory of user
   175  history
+================================================
+
+  180  # copy file
+  181  cp 1.txt one.txt
+  182  ls
+  183  cp 1.txt /vadapav/1/2/3
+  184  ls /vadapav/1/2/3
+  185  # cp Source_location dest_location
+  186  cp 1.txt /home/one.txt
+  187  ls
+  188  # rename the file
+  189  mv 1.txt 11.txt
+  190  ls
+  191  # cut paste
+  192  mv 11.txt 1/2/
+  193  ls 1/2/
+  194  cp 1 /home/
+  195  cp -r 1 /home/
+  196  ls -l /home
+  197  ls
+  198  mv 1 one
+  199  ls
+  200  mv 1 /home/one
+  201  mv one /home/one
+  202  # copy folder : cp -r sourcelocation dest_location
+  203  # rename folder : mv source_name other_name
+  204  # cut paste : mv 1 /home/one
+  205  ls
+  206  mkdir samosa
+  207  cp samosa /home/
+  208  cp -r samosa /home/
+  209  mv samosa dosa
+  210  ls
+  211  mv dosa /home/
+  212  ls
+  213  history
+=========================

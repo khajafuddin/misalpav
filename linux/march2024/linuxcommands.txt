@@ -79,3 +79,32 @@
    96  rm -f ??????.ttx
    97  ls
    98  rm -f ?.ttx
+=================================================================
+ 120  cd /vadapav/
+  121  mkdir -p 1/2/3/4/5/6/7/8/9
+  122  cd 1
+  123  ls
+  124  cd 2
+  125  ls
+  126  cd 3
+  127  ls
+  128  cd 4
+  129  ls
+  130  cd 5
+  131  cd 6
+  132  cd 7
+  133  cd 8
+  134  cd 9
+  135  pwd
+  136  mkdir /samosa
+  137  mkdir /dosa
+  138  mkdir /samosa/india/google/it
+  139  mkdir -p /samosa/india/google/IT
+  140  tree /vadapav/1
+  141  nmcli c up enp0s3
+  142  yum install tree -y
+  143  clear
+  144  tree /vadapav/1/
+  145  tree /samosa
+  147  history
+==============================

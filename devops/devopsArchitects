@@ -39,3 +39,23 @@ Seelction of cloud service provider/ON-premises
 Multi-tenancy approach
 Integration with various cloud 
 INtegration users from various domains
+========================================================
+
+1. New requirement --  Dockerfile -- Images -- Containers (Automate)
+    Bare Metal machine
+        can't containerise
+          plan the retirement
+          start from scratch  -- Dockerfile-Images-Containers
+Refactor -- Modify the code as per requirement -- Dockerfile -- images- containers
+2. Virtual machine --
+  can't containerise
+  plan the retirement
+  start from scratch -- Dockerfile-Images-Containers
+  move VM as container in k8s
+  Refactor -- Modify the code as per requirement -- Dockerfile -- images- containers
+3. Containers
+  move containers as it is
+  data (Internal Volume / External Volume)
+  COnfiguration
+
+===================================================

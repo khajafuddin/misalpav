@@ -47,3 +47,31 @@ To delete container forcefully
   471  docker run -d --name=c4 httpd
   472  docker ps -a
   473  # -d is for detached mode or eun the container in background
+
+================================================
+
+ 478  # to find out IP address of Containers
+  479  docker inspect c1 | grep -i ipaddr
+  480   docker inspect c1
+  481  clear
+  482   docker inspect c1 | grep -i ipaddr
+  483  docker inspect c2 | grep -i ipaddr
+  484  docker inspect c3 | grep -i ipaddr
+  485  docker inspect c4 | grep -i ipaddr
+  486  curl "172.17.0.2"
+  487  curl "172.17.0.3"
+  488  curl "172.17.0.4"
+  489  curl "172.17.0.5"
+  490  ip a s
+  491  clear
+  492  docker run -d --name=c4 -p 9090:80 httpd
+  493  docker run -d --name=c5 -p 9090:80 httpd
+  494  docker run -d --name=c6 -p 9091:80 nginx
+  495  docker run -d --name=c6 -p 9092:80 kharatramesh/vadapavimages:vadapav
+  496  docker run -d --name=c7 -p 9092:80 kharatramesh/vadapavimages:vadapav
+  497  docker ps -a
+  498  ip as
+  499  ip a s
+  500  clear
+  501  history
+

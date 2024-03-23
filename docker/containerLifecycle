@@ -1,0 +1,40 @@
+  439  # container lifecycle -- to create container , start , stop , pause, unpause , delete
+  440  docker images
+
+To create Containers
+  441  docker container create --name=c1 httpd
+  442  docker ps -a
+  443  docker container create --name=c2 nginx
+  444  docker ps -a
+
+To Start Containers
+  445  docker start c1
+  446  docker ps -a
+  447  docker start c2
+  448  docker ps -a
+  To Pause the container
+
+To Stop Containers
+    449  docker stop c1
+  450  docker stop c2
+  451  docker ps -a
+  452  docker start c1
+  453  docker start c2
+  454  docker ps -a
+To Pause the container
+
+  455  docker pause c1
+  456  docker pause c2
+  457  docker ps -a
+
+To UnPause the container
+  
+  458  docker unpause c1
+  459  docker unpause c2
+  460  docker ps -a
+  
+To delete container forcefully  
+  
+461  docker rm -f c1
+  462  docker rm -f c2
+  463  docker ps -a

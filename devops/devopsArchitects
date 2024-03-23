@@ -1,0 +1,39 @@
+Containerise
+Microservices
+Security to microservices
+Provisioning/configuration of infrastructure (Application Benchmarking)
+CPU
+RAM
+Bandwidth
+Disk
+Software
+Code Repositories(Version controlled)
+Defining Build tools
+Testing (Automation Test tools)
+functional testing
+Code scanning / Review
+stress/load testing
+VA/PT
+monitoring (application/infrastructure/Container)
+Microservices Monitoring (Service mesh)
+backup and restoration process
+DR (pipeline | infrastructure)
+maintainance activiities (patching/upgradation)
+Rollout new version of application(Blue/Green)
+Rollback to older version of application
+Project management tool
+Cost Estimation
+ROI
+operational efficiency
+Licences
+Secret rotations
+MIgration path
+Audits
+decomissioning
+Pipeline tool selection
+Artifacts repository tool
+Know error database
+Troubleshooting
+Do's and Don'ts
+Seelction of cloud service provider/ON-premises
+Multi-tenancy approach

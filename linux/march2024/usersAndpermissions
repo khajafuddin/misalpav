@@ -119,3 +119,21 @@
   390  tail -1 /etc/shadow
   391  chage -W 10 user4
   392  tail -1 /etc/shadow
+======================
+
+ 393  history
+  394  clear
+  395  # how to lock password
+  396  getent shadow user1
+  397  passwd -l user1
+  398  getent shadow user1
+  399  passwd -u user1
+  400  getent shadow user1
+  401  userdel -r user1
+  402  tail -3 /etc/passwd
+  403  # usermod
+  404  tail -4 /etc/group
+  405  useradd user1
+  406  tail -4 /etc/group
+  407  tail -1 /etc/passwd
+  408  history

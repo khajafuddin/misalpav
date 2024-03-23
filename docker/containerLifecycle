@@ -38,3 +38,12 @@ To delete container forcefully
 461  docker rm -f c1
   462  docker rm -f c2
   463  docker ps -a
+==============
+ 466  # create + start == Running
+  467  # run command
+  468  docker run -d --name=c1 httpd
+  469  docker run -d --name=c2 httpd
+  470  docker run -d --name=c3 httpd
+  471  docker run -d --name=c4 httpd
+  472  docker ps -a
+  473  # -d is for detached mode or eun the container in background

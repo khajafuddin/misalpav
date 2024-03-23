@@ -1,0 +1,94 @@
+ 271  # rwx
+  272  # r= read
+  273  # w=write
+  274  # x= execute
+  275  # for folder : r : list the contents , w: create , modify and delete files and folders
+  276  # x : accessible : you can navigate to that folder
+  277  # --- : owner/user
+  278  # --- : group
+  279  # --- : others
+  280  ls -l 1.txt
+  281  chmod 000 1.txt
+  282  chmod 777 1.txt
+  283  ls -l 1.txt
+  284  chmod 011 1.txt
+  285  ls -l 1.txt
+  286  chmod 444 1.txt
+  287  ls -l 1.txt
+  288  chmod 600 1.txt
+  289  ls -l 1.txt
+  290  chmod 700 1.txt
+  291  ls -l 1.txt
+  292  clear
+  293  chmod 888 1.txt
+  294  # 0-7 : octal or numerical method
+  295  # symbolic method
+  296  # owner or user : u
+  297  # group : g
+  298  # others : o
+  299  # all : a
+  300  chmod a-rwx 1.txt
+  301  chmod u+r 1.txt
+  302  ls -l 1.txt
+  303  chmod g+rwx 1.txt
+  304  ls -l 1.txt
+  305  chmod o+r 1.txt
+  306  chmod a-rwx 1.txt
+  307  chmod u+r,g+rwx,o+r 1.txt
+  308  chmod u-r,g-w,o-r 1.txt
+  309  ls -ld A1
+  310  chmod 000 A1
+  311  ls -ld A1
+  312  touch A1/1.txt
+  313  ls -l A1/
+  314  chmod 777 A1
+  315  ls -ld A1
+  316  ls -l A1
+  317  chmod -R 000 A1
+  318  ls -ld A1
+  319  ls -l A1
+  320  history
+=======================
+ 323  # user management
+  324  # Baby -- Name (Username)
+  325  # Baby -- id(user id)
+  326  # Home -- Home Directory
+  327  # Petname -- Comments (GECOS)
+  328  # Primary group -- (Own Name)--Username (By Default)
+  329  # Language -- (Shell -- It is a set of commands assigned to user to interact with OS)
+  330  # shell -- /bin/bash , /bin/sh, /bin/ksh, zsh, powershell, gitbash
+  331  useradd user1
+  332  useradd user2
+  333  useradd user3
+  334  useradd user4
+  335  useradd user5
+  336  userdel -r user4
+  337  userdel -r user3
+  338  userdel -r user2
+  339  userdel -r user1
+  340  useradd -m user1
+  341  useradd -m user2
+  342  # 67 places in OS
+  343  # /etc/passwd -- info about users
+  344  # /etc/shadow -- passwords and aging parameters of users
+  345  # /etc/group -- information about groups
+  346  cat /etc/passwd
+  347  clear
+  348  tail -n 3 /etc/passwd
+  349  tail -n 1 /etc/passwd
+  350  tail -n 2 /etc/passwd
+  351  head -n 1 /etc/passwd
+  352  tail -n 3 /etc/passwd
+  353  tail -3 /etc/passwd
+  354  useradd user4
+  355  tail -4 /etc/passwd
+  356  # 7 filds of passwd file
+  357  # username:password related field:UserId:PrimaryGroup ID:HomeDirectory:Shell
+  358  # user1:x:1005:1005::/home/user1:/bin/bash
+  359  # user1: username:
+  360  # x: password related fild
+  361  #1005 : User id
+  362  # 1005 : primary group ID
+  363  # :: - COmments (GECOS)
+  364  # /home/user1 : Home Directory of User
+  365  # /bin/bash : shell

@@ -92,3 +92,30 @@
   363  # :: - COmments (GECOS)
   364  # /home/user1 : Home Directory of User
   365  # /bin/bash : shell
+===========================
+ 367  clear
+  368  tail -3 /etc/shadow
+  369  # !! -- indicates that password is not set
+  370  passwd user1
+  371  tail -3 /etc/shadow
+  372  # sha256/sha512 -- encryption algorithm
+  373  passwd user2
+  374  tail -3 /etc/passwd
+  375  tail -3 /etc/shadow
+  376  clear
+  377  man gzip
+  378  tail -3 /etc/shadow
+  379  # The number of days from 1st Jan 1970 -- EPOCH Year
+  380  # 0 : indicates , u are allowed to change the password anytime
+  381  # 100 years = 100 * 365 = 36,500
+  382  # 99999 -- number of days user password will not expired
+  383  # 7 days : Number of days before password expiry information will recieved
+  384  chage -l
+  385  chage -M 100 user4
+  386  tail -1 /etc/shadow
+  387  chage -m 2 user4
+  388  tail -1 /etc/shadow
+  389  chage -d 200 user4
+  390  tail -1 /etc/shadow
+  391  chage -W 10 user4
+  392  tail -1 /etc/shadow

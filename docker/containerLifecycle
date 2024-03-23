@@ -74,4 +74,12 @@ To delete container forcefully
   499  ip a s
   500  clear
   501  history
-
+==========================
+  573  docker ps -a
+  574  # how to login inside container
+  575  docker exec -it c5 bash
+  576  # location of index.html page is : /usr/local/apache2/htdocs/html
+  577  # location of index.html page in nginx is: /usr/share/nginx/html
+  578  docker exec -it c6 bash
+  579  history
+================================

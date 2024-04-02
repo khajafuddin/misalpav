@@ -1,0 +1,3 @@
+docker network create --driver=bridge --subnet 91.91.0.0/24 vadapav
+docker network ls
+docker run -d --name=c11 --network=vadapav --ip=91.91.0.21 --memory=15M --cpus="00001" --hostname=samosa.vadapav.com httpd

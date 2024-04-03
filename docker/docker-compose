@@ -1,0 +1,17 @@
+version: "3.9"
+services:
+  webserver:
+    build:
+      context: /dockerfiles
+      dockerfile: 1.df
+    scale: 2
+  frontend:
+    image: nginx
+    scale: 5
+====================================================
+      75  docker-compose -f ericsson.yaml ps
+   76  docker-compose -f ericsson.yaml stop frontend
+   77  docker-compose -f ericsson.yaml ps
+   78  docker-compose -f ericsson.yaml ps -a
+   79  docker-compose -f ericsson.yaml rm frontend
+  

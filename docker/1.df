@@ -1,3 +1,29 @@
+===========
+ 23  mkdir /dockerfiles
+   24  cd /dockerfiles
+   25  clear
+   26  touch index.html
+   27  vi index.html
+   28  touch Dockerfile 1.df one.dockerfile
+   29  ls
+   30  vi 1.df
+   31  docker images
+   32  ls
+   33  cat 1.df
+   34  touch 1.txt 2.txt
+   35  tar -cvf airtel.tar *
+   36  ls
+   37  # docker build . -f 1.df -t registryname/reponame:tag
+   38  docker build . -f 1.df -t kharatramesh/ericsson4:pavbhajiwebserver
+   39  docker images
+   41  docker login
+   42  docker push kharatramesh/ericsson4:pavbhajiwebserver
+   43  clear
+   44  docker run -d --name=web1 -p 9090:80 kharatramesh/ericsson4:pavbhajiwebserver
+
+==========
+
+
 FROM ubuntu
 MAINTAINER "admin@ericsson.com"
 LABEL "env"="charging"

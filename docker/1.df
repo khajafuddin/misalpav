@@ -1,0 +1,35 @@
+FROM ubuntu
+MAINTAINER "admin@ericsson.com"
+LABEL "env"="charging"
+LABEL "operator"="Airtel"
+
+
+WORKDIR /ericsson
+WORKDIR billing
+WORKDIR att
+
+WORKDIR /ericcsion/billing/airtel
+
+COPY 1.txt /ericcsion/billing/airtel
+ADD 2.txt /ericcsion/billing/airtel
+ADD airtel.tar /ericsson
+ADD https://the.earth.li/~sgtatham/putty/latest/w64/putty-64bit-0.80-installer.msi /ericcsion/billing/
+
+RUN apt update -y
+RUN apt install apache2 -y && apt install tree -y && mkdir /samosa
+
+COPY index.html /var/www/html
+EXPOSE 80
+
+ENV memeory=4G
+ENV disk=ssd
+ENV app=billing
+ENV MYSQL_DATABASE=db1
+
+ARG dish=samosa
+ARG location=eastus
+
+
+VOLUME v1
+
+ENTRYPOINT ["apache2ctl","-D","FOREGROUND"]

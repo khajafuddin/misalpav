@@ -1,3 +1,9 @@
+Java Project --- 2 to 4 microservices (Frontend/Backend/database) --
+Build and deploy multiple microservices using Azure Devops with all stages --
+Repo/Provisoning infra using terraform/Build/ACR/Creating containers/Testing/CodeReview/Deploying on k8s Cluster 
+using Blue/Green deployment Strategy
+==============================
+
 Containerise
 Microservices
 Security to microservices

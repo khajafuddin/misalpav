@@ -63,8 +63,8 @@ variable "map2" {
 variable "keys" {
   type = map(string)
   default = {
-    "access_key" = "AKIAXJBKQHUUMEC2EJOV",
-    "secret_key" = "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"
+    "access_key" = "",
+    "secret_key" = ""
   }
   sensitive = true
 

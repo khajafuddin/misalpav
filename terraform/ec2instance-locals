@@ -1,0 +1,60 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "5.45.0"
+    }
+  }
+}
+
+provider "aws" {
+  access_key = "***"
+  secret_key = "***"
+  region     = "ap-south-1"
+}
+
+locals {
+  env = "dev"
+  app = "google"
+}
+
+variable "abc1" {
+  type    = string
+  default = "samosa"
+}
+
+resource "aws_instance" "aws1" {
+  count =3 
+  ami =data.aws_ami.aws-linux.id
+  instance_type = "t2.micro"
+  tags = {
+    "dish1" = "My customer Name is: ${local.app}"
+    "Name" = "${local.app}-${count.index}"
+    "application" = local.env
+    "dish" = "I like - ${var.abc1}"
+  }
+}
+
+data "aws_ami" "aws-linux" {
+  most_recent = true
+  owners      = ["amazon"]
+
+  filter {
+    name   = "name"
+    values = ["amzn-ami-hvm*"]
+  }
+
+  filter {
+    name   = "root-device-type"
+    values = ["ebs"]
+  }
+
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+}
+
+output "amiubuntu" {
+  value = data.aws_ami.aws-linux.id
+}

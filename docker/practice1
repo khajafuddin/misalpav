@@ -1,0 +1,22 @@
+[root@client1 php]# cd /dockerfiles/
+[root@client1 dockerfiles]# cat db1.df
+FROM mysql
+ENV MYSQL_DATABASE priar
+COPY ./createtable.sql /docker-entrypoint-initdb.d/
+COPY ./insertvalues.sql /docker-entrypoint-initdb.d/
+[root@client1 dockerfiles]# cat createtable.sql
+CREATE TABLE priarworld ( firstname varchar(20), rollnumber int(5));
+CREATE TABLE priarworld1 ( firstname varchar(20), rollnumber int(5));
+CREATE TABLE priarworld2 ( firstname varchar(20), rollnumber int(5));
+CREATE TABLE priarworld3 ( firstname varchar(20), rollnumber int(5));
+[root@client1 dockerfiles]# cat insertvalues.sql
+INSERT INTO priarworld (firstname, rollnumber) VALUES ('Pushpak',1);
+INSERT INTO priarworld (firstname, rollnumber) VALUES ('Nayan',2);
+INSERT INTO priarworld (firstname, rollnumber) VALUES ('Chait',3);
+INSERT INTO priarworld (firstname, rollnumber) VALUES ('Rutuja',4);
+INSERT INTO priarworld (firstname, rollnumber) VALUES ('Tanmay',5);
+[root@client1 dockerfiles]# # docker build . -f db1.df -t mydatabase:v1.0
+[root@client1 dockerfiles]# # docker run -d --name=db1 -e MYSQL_ROOT_PASSWORD=123 -p 3306:3306 mydatabase:v1.0
+[root@client1 dockerfiles]# # to login inside container
+[root@client1 dockerfiles]# # docker exec -it db1 bash
+[root@client1 dockerfiles]#

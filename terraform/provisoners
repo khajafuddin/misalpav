@@ -8,8 +8,8 @@ terraform {
 }
 
 provider "aws" {
-  access_key = "**"
-  secret_key = "***"
+  access_key = "***"
+  secret_key = "**"
   region     = "ap-south-1"
 }
 
@@ -62,7 +62,8 @@ resource "aws_instance" "vadapav" {
     inline = [
       "chmod a+x /home/ec2-user/web.sh",
       "/home/ec2-user/web.sh",
-      "sudo echo Welcome to Terraform > /var/www/html/index.html"
+      "sudo chmod a+rwx /var/www/html",
+      "sudo echo Welcome to Terraform- iaaC > /var/www/html/index.html"
     ]
    
   }

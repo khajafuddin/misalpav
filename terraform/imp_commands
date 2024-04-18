@@ -1,0 +1,9 @@
+To list all resources from current state file
+terraform state list
+terraform state --help
+to remove resource from state file 
+terraform state rm resource_name ( This command will delete entry from state file but actual resource will not get deleted)
+------------
+To destroy a specific resource from cloud
+
+terraform destroy -target resource_name

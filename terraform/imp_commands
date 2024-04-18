@@ -14,3 +14,7 @@ To use earlier version of tfstate file, follow below instrctions
 3. terraform init -backend=false
 4. terraform plan
 5. terraform apply
+===========================================
+terraform taint -- 
+Terraform can taint the resource in case same is damaged/degraded/reconfigured and not working properly.
+After tainting resource , terraform will recreate tainted resource in next apply lifecycle.

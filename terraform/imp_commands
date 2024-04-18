@@ -7,3 +7,10 @@ terraform state rm resource_name ( This command will delete entry from state fil
 To destroy a specific resource from cloud
 
 terraform destroy -target resource_name
+======================================
+To use earlier version of tfstate file, follow below instrctions
+1. download specfic tfstate file from remote location
+2. copy tfstate.json to current folder with terraform.tfstate
+3. terraform init -backend=false
+4. terraform plan
+5. terraform apply

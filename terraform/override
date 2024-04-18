@@ -1,0 +1,19 @@
+example.tf
+-----------
+resource "aws_instance" "web" {
+  ami           = "ami-001843b876406202a"
+  instance_type = "t2.micro"
+  tags = {
+    "Name" = "remote-backend2"
+  }
+}
+=================
+ec2_override.tf
+
+resource "aws_instance" "web" {
+  instance_type = "t3.micro"
+  tags = {
+    "Name" ="dancingdollsterr"
+    "app" = "wipro"
+  }
+}

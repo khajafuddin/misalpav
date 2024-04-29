@@ -22,3 +22,13 @@ VOLUME aalotikki
 
 CMD ["apache2ctl","-D","FOREGROUND"]
 #ENTRYPOINT ["ping"]
+================
+
+To build image:
+docker build . -f 1.df -t mywebserver:v1.0
+docker images
+==================
+docker tag mywebserver:v1.0 kharatramesh/ericsson5:ericsson-webserver
+docker images
+docker login
+docker push kharatramesh/ericsson5:ericsson-webserver

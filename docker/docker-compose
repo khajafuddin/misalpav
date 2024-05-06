@@ -9,7 +9,9 @@ services:
     image: nginx
     scale: 5
 ====================================================
-      75  docker-compose -f ericsson.yaml ps
+curl -SL https://github.com/docker/compose/releases/download/v2.27.0/docker-compose-linux-x86_64 -o /usr/local/bin/docker-compose      
+
+75  docker-compose -f ericsson.yaml ps
    76  docker-compose -f ericsson.yaml stop frontend
    77  docker-compose -f ericsson.yaml ps
    78  docker-compose -f ericsson.yaml ps -a

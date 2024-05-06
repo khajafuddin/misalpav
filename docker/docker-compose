@@ -16,4 +16,26 @@ curl -SL https://github.com/docker/compose/releases/download/v2.27.0/docker-comp
    77  docker-compose -f ericsson.yaml ps
    78  docker-compose -f ericsson.yaml ps -a
    79  docker-compose -f ericsson.yaml rm frontend
-  
+  ===========================
+
+version: "3.9"
+services:
+  webserver:
+    build:
+      context: .
+      dockerfile: ./frontend.df
+    container_name: frontend
+    ports:
+    - "9098:80"
+    volumes:
+    - "/php:/var/www/html"
+    depends_on:
+    - database
+  database:
+    build:
+      context: .
+      dockerfile: ./db.df
+    container_name: backend
+    environment:
+    - MYSQL_ROOT_PASSWORD=123
+
